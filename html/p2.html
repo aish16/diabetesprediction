@@ -1,0 +1,124 @@
+<html>
+<head>
+<title> form to input data</title>
+<link rel="stylesheet" type="text/css" href="style3.css">
+<script>
+function letters( edValue )
+{
+var s = edValue.value;
+var letters = /^[A-Za-z]+$/; 
+if(!(s.match(letters)))  
+alert("invalid input");
+
+}
+function ages( edValue )
+{
+var s = edValue.value;
+
+if(isNaN(s))  
+alert("invalid age");
+
+}
+</script>
+
+</head>
+<body id="b1">
+
+</br></br>
+<div id="d1" >
+<table id="t">
+<tr>
+<td id="c1"><a href="project.html" target="_self"><b>Home</b></a></td>
+<td id="c1"><a href="p1.html"><b>Why Women?</b></a></td>
+<td id="c1"><a href="p2.html"><b>Test</b></a></td>
+<td id="c1"><a href="p3.html"><b>Learning</b></a></td>
+<td id="c1"><a href="p4.html"><b>Diabetes Diet</b></a></td></tr>
+</table>
+</br>
+
+
+<form action="/cgi-bin/database.py" method="get">
+
+<table id="t1">
+
+<tr>
+<td ><P ID="P1">Name</P></td>
+<td ><input type="text" name="name" id="name" onblur="letters(this);"></td>
+
+</tr>
+<tr>
+<td ><P ID="P1">Number of times pregnant</P></td>
+<td ><input type="text" name="pregnant" id="pregnant"></td>
+
+</tr><tr>
+<td ><P ID="P1">Plasma glucose concentration</P></td>
+<td ><input type="text" name="plasma" id="plasma"></td>
+
+</tr><tr>
+<td ><P ID="P1">Diastolic blood pressure (mm Hg)</P></td>
+<td ><input type="text" name="bp" id="bp"></td>
+
+</tr>
+<tr>
+<td ><P ID="P1">Triceps skin fold thickness (mm)</P></td>
+<td><input  type="text" name="triceps" id="triceps" ></td>
+
+</tr>
+
+<tr>
+<td ><P ID="P1">2-Hour serum insulin (mu U/ml)</P></td>
+<td><input type="text" name="insulin" id="insulin"></td>
+
+</tr>
+
+<tr>
+<td ><P ID="P1">Body mass index </P></td>
+<td><input type="text" name="bmi" id="bmi"></td>
+
+</tr>
+
+<tr>
+<td ><P ID="P1">Diabetes pedigree function</P></td>
+<td><input type="text" name="pedigree" id="pedigree"></td>
+
+</tr>
+
+<tr>
+<td ><P ID="P1">Age (years)</P></td>
+<td><input type="text" name="age" id="age" onblur="ages(this);"></td>
+</BR>
+</tr>
+<tr>
+  <td><input type="reset" value="Reset"></td>
+<td><input type="submit" value="Submit" onsubmit="try()"></td>
+</tr>
+</table>
+</form>
+
+
+</div>
+
+
+<script type="text/javascript">
+function try(){
+var name=document.getElementById("name").value;
+var pregnant=document.getElementById("pregnant").value;
+var plasma=document.getElementById("plasma").value;
+var bp=document.getElementById("bp").value;
+var triceps=document.getElementById("triceps").value;
+var insulin=document.getElementById("insulin").value;
+var bmi=document.getElementById("bmi").value;
+var pedigree=document.getElementById("pedigree").value;
+var age=document.getElementById("age").value;
+if(name == ""||pregnant==""||plasma==""||bp==""||triceps==""||insulin==""||bmi==""||pedigree==""||age==""){
+                    alert("fields empty");
+                }
+else if(isNaN(pregnant)||isNaN(plasma)||isNaN(bp)||isNaN(triceps)||isNaN(insulin)||isNaN(bmi)||isNaN(pedigree)||isNaN(pedigree))
+{
+alert(" invalid input");
+}
+}
+</script>
+
+</body>
+</html>
